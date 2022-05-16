@@ -5,16 +5,18 @@ const ObjectId = mongoose.Schema.Types.ObjectId
 const bookSchema = new mongoose.Schema({
     title: { 
         type: String, 
-        required: true, 
-        unique: true, 
+        required: true,
         trim: true, 
-        lowercase:true
+        lowercase: true,
+        unique: true
     },
+
     excerpt: { 
         type: String, 
         required: true, 
         trim: true 
     },
+
     userId: { 
         type: ObjectId, 
         ref:"User", 
@@ -25,7 +27,6 @@ const bookSchema = new mongoose.Schema({
     ISBN: { 
         type: String, 
         required: true, 
-        unique: true, 
         trim: true 
     },
 
@@ -56,8 +57,7 @@ const bookSchema = new mongoose.Schema({
     },
 
     releasedAt: { 
-        type: Date, 
-        required: true 
+        type: String
     },/*FORMAT YYYY-MM-DD*/ 
 
 }, { timestamps: true });
