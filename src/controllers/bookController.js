@@ -97,9 +97,9 @@ const createBook = async (req, res) => {
         }
 
         // Check subcategory is valid or not
-        if (! check(subcategory)) {
-            return res.status(400).send({ status: false, message: 'Enter Valid Subcategory' });
-        }
+        // if (! check(subcategory)) {
+        //     return res.status(400).send({ status: false, message: 'Enter Valid Subcategory' });
+        // }
 
         // Check releasedAt is coming or not
         if (!isValid(releasedAt)) {
@@ -218,7 +218,7 @@ const getBookById = async function (req, res) {
             "reviewsData": review
         }
 
-        return res.status(200).send({status:true,message:"Books list", data:{data1}})
+        return res.status(200).send({status:true,message:"Books list", data:data1})
     }
     catch(err){
         return res.status(500).send({ status: false, message: "server error", error: err.message });
